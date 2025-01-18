@@ -9,7 +9,7 @@
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/nbui23/monkey
 cd monkeymonkey-shop
 ```
 2. Install dependencies:
