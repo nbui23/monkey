@@ -58,10 +58,7 @@ class CheckoutPage {
     }
 
     updateTotal() {
-        const total = this.cartItems.reduce((sum, item) => {
-            const product = products.find(p => p.id === item.productId);
-            return sum + (product ? product.price * item.quantity : 0);
-        }, 0);
+        const total = this.calculateTotal();
         const totalElement = document.getElementById('cartTotal');
         if (totalElement) {
             totalElement.textContent = `$${total.toFixed(2)}`;
@@ -76,21 +73,31 @@ class CheckoutPage {
 
         console.log('Processing checkout...');
 
-        // Gather all necessary data before clearing cart
-        const purchasedItems = [...this.cartItems];
-        const userActivity = activityTracker.getSessionSummary();
+        // Generate comprehensive customer insights
+        const customerInsights = activityTracker.generateCustomerInsights();
+        console.log('Customer Insights:', customerInsights);
 
-        // Record the checkout action
+        // Store insights in localStorage
+        const previousInsights = JSON.parse(localStorage.getItem('customerInsights') || '[]');
+        previousInsights.push(customerInsights);
+        localStorage.setItem('customerInsights', JSON.stringify(previousInsights));
+
+        // Gather items before clearing cart
+        const purchasedItems = [...this.cartItems];
+        const userActivity = customerInsights; // Use our comprehensive insights
+
+        // Record the checkout action with detailed insights
         activityTracker.trackInteraction('checkout_completed', {
             items: purchasedItems,
-            total: this.calculateTotal()
+            total: this.calculateTotal(),
+            insights: customerInsights
         });
 
         // Show purchase confirmation
         alert('Thank you for your purchase!');
 
         try {
-            // Show survey modal and wait for it to complete
+            // Show survey modal with enhanced data
             if (window.surveyModal) {
                 await surveyModal.show(purchasedItems, userActivity);
             } else {
