@@ -1,4 +1,4 @@
-# Monkey See, Monkey Do
+# Monkey See, Survey Do
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@
 1. Clone the repository:
 ```bash
 git clone https://github.com/nbui23/monkey
-cd monkeymonkey-shop
+cd monkey
 ```
 2. Install dependencies:
 ```bash

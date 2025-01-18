@@ -39,21 +39,15 @@ const products = [
     },
     {
         id: 3,
-        name: "Cotton T-Shirt",
+        name: "T-Shirt",
         type: "Tops",
         price: 24.99,
         colors: {
             "White": {
-                image: "/api/placeholder/250/200?text=White+T-Shirt"
+                image: "/assets/images/products/tops/shirt-white.jpg"
             },
             "Black": {
-                image: "/api/placeholder/250/200?text=Black+T-Shirt"
-            },
-            "Gray": {
-                image: "/api/placeholder/250/200?text=Gray+T-Shirt"
-            },
-            "Navy": {
-                image: "/api/placeholder/250/200?text=Navy+T-Shirt"
+                image: "/assets/images/products/tops/shirt-black.jpg"
             }
         },
         sizes: ["XS", "S", "M", "L", "XL"],
