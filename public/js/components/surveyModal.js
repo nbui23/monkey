@@ -63,6 +63,10 @@ class SurveyModal {
         if (!survey) return;
 
         this.content.innerHTML = `
+            <div class="modal-header">
+                <h2>Quick Survey</h2>
+                <p class="subtitle">Help us improve your shopping experience!</p>
+            </div>
             <div class="survey-question">${survey.question}</div>
             <div class="survey-options">
                 ${survey.options.map(option => `
@@ -72,7 +76,7 @@ class SurveyModal {
                 `).join('')}
             </div>
             <button class="skip-survey-btn" onclick="surveyModal.skip()">
-                Skip Survey
+                Skip this survey
             </button>
         `;
     }
@@ -90,7 +94,11 @@ class SurveyModal {
         this.content.innerHTML = `
             <div class="survey-thank-you">
                 <h3>Thank you for your feedback!</h3>
-                <p>Your response helps us improve our service.</p>
+                <p>Your response helps us create a better shopping experience for everyone.</p>
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 24px auto;">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
             </div>
         `;
 

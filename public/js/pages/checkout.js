@@ -7,9 +7,7 @@ class CheckoutPage {
 
     initializeCheckout() {
         console.log('Initializing checkout...');
-        // Get cart items from cartService
         this.cartItems = cartService.getItems();
-        console.log('Cart items:', this.cartItems);
         this.renderCartItems();
         this.updateTotal();
     }
