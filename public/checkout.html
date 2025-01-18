@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Retail Monkey</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/checkout.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Checkout</h1>
+    </div>
+
+    <div class="checkout-container">
+        <div class="cart-summary">
+            <h2>Your Cart</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+        </div>
+
+        <button id="completeCheckout" class="checkout-btn">Complete Purchase</button>
+    </div>
+
+    <!-- Modal for survey -->
+    <div id="surveyModal" class="modal">
+        <div class="modal-content">
+            <h2>Quick Survey</h2>
+            <p>Help us improve your shopping experience!</p>
+            <div id="surveyContent"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data/products.js"></script>
+    <script src="js/services/cartService.js"></script>
+    <script src="js/services/activityTracker.js"></script>
+    <script src="js/services/surveyService.js"></script>
+    <script src="js/pages/checkout.js"></script>
+</body>
+</html>

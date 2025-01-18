@@ -1,0 +1,111 @@
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: -16px -16px 12px -16px;
+}
+
+.product-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-type {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #444;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.product-info {
+    padding: 8px 0;
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #2c5282;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* Quick view button that appears on hover */
+.quick-view-btn {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover .quick-view-btn {
+    bottom: 16px;
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-image {
+        height: 200px;
+    }
+
+    .product-name {
+        font-size: 1em;
+    }
+
+    .product-type {
+        font-size: 0.75em;
+        padding: 4px 10px;
+    }
+}

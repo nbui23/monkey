@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeyMonkey</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/product.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/components/cart-badge.css">
+</head>
+<body>
+    <div class="header">
+        <h1>MonkeyMonkey</h1>
+    </div>
+
+    <div id="cart-count">0</div>
+    <div class="products-grid" id="productsGrid"></div>
+    <button class="checkout-btn" onclick="window.goToCheckout()">GO TO CHECKOUT</button>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="window.closeModal()">&times;</span>
+            <div class="product-details" id="productDetails"></div>
+        </div>
+    </div>
+
+    <!-- Data -->
+    <script src="js/data/products.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/activityTracker.js"></script>
+    <script src="js/services/cartService.js"></script>
+
+    <!-- Components -->
+    <script src="js/components/cartBadge.js"></script>
+    <script src="js/components/productCard.js"></script>
+    <script src="js/components/productModal.js"></script>
+
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+</body>
+</html>
